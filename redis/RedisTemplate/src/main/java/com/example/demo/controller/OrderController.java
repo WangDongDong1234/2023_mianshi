@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 /**
  * @auther zzyy
  * @create 2022-12-14 20:56
+ * http://localhost:7777/swagger-ui.html#/
  */
 @RestController
 @Slf4j
