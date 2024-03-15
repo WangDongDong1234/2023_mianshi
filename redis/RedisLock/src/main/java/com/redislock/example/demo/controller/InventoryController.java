@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * http://localhost:8888/swagger-ui.html#
+ */
 @RestController
 @Slf4j
 @Api(tags = "redis分布式锁测试-扣减库存，一次卖一个")
@@ -72,6 +75,18 @@ public class InventoryController {
     public String sale5(){
 
         return inventoryService.sale5("001");
+    }
+
+
+    /**
+     * hset实现分布式锁，这次还可重入，自动续期
+     * @return
+     */
+    @ApiOperation("版本6-hset实现分布式锁，这次还可重入，自动续期")
+    @GetMapping(value = "/inventory/sale6")
+    public String sale6(){
+
+        return inventoryService.sale6("001");
     }
 
 

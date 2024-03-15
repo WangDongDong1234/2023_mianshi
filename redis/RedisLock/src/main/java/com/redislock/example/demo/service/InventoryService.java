@@ -1,6 +1,7 @@
 package com.redislock.example.demo.service;
 
 import cn.hutool.core.util.IdUtil;
+import com.redislock.example.demo.factory.DistributedLockFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +30,9 @@ public class InventoryService {
     private StringRedisTemplate stringRedisTemplate;
 
     private Lock lock = new ReentrantLock();
+
+    @Autowired
+    private DistributedLockFactory distributedLockFactory;
 
     public String sale1(String productNo) {
         String response ="";
@@ -215,4 +219,61 @@ public class InventoryService {
         }
         return response;
     }
+
+
+    /**
+     * hset 实现分布式锁，解决可重入性问题
+     * @param productNo
+     * @return
+     */
+    public String sale6(String productNo) {
+        String response ="";
+        //分布式锁
+
+
+        Lock redisLock = distributedLockFactory.getDistributedLock("redis");
+        redisLock.lock();
+
+
+        try{
+            //1 查询库存信息
+            String result =stringRedisTemplate.opsForValue().get(PRODUCT_COUNT_KEY+productNo);
+
+            //2.判断库存信息是否足够
+            Integer count =result==null?0:Integer.parseInt(result);
+
+            //3. 扣减库存，买次减少1个
+            if(count>0){
+                stringRedisTemplate.opsForValue().set(PRODUCT_COUNT_KEY+productNo,String.valueOf(--count));
+                response="sale6成功卖出一个商品，库存剩余："+count;
+                log.info(response+"\t"+"服务端口号"+port);
+                testReEntry();
+                //暂停120秒钟线程,故意的，演示自动续期的功能。。。。。。
+                //try { TimeUnit.SECONDS.sleep(120); } catch (InterruptedException e) { e.printStackTrace(); }
+            }else{
+                response="sale6商品卖完了";
+            }
+        }finally {
+            redisLock.unlock();
+
+        }
+        return response;
+    }
+
+
+    /**
+     * 可重入性测试
+     */
+    private void testReEntry()
+    {
+        Lock redisLock = distributedLockFactory.getDistributedLock("redis");
+        redisLock.lock();
+        try
+        {
+            System.out.println("===========测试可重入锁========");
+        }finally {
+            redisLock.unlock();
+        }
+    }
+
 }

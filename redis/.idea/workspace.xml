@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a855bb-c216-460e-802e-b138ac9e2f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RedisLock/src/main/java/com/redislock/example/demo/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RedisLock/src/main/java/com/redislock/example/demo/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RedisLock/src/main/java/com/redislock/example/demo/controller/InventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RedisLock/src/main/java/com/redislock/example/demo/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RedisLock/src/main/java/com/redislock/example/demo/service/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RedisTemplate/src/main/java/com/example/demo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RedisTemplate/src/main/java/com/example/demo/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/1.尚硅谷redis学习-基础-3.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/note/1.尚硅谷redis学习-基础-3.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/1.尚硅谷redis课程学习-基础.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/note/1.尚硅谷redis课程学习-基础.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/2.redis大厂高级篇-2.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/note/2.redis大厂高级篇-2.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/2.redis大厂高级篇.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/note/2.redis大厂高级篇.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/2.尚硅谷redis课程学习-高级-2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/note/2.尚硅谷redis课程学习-高级-2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/2.尚硅谷redis课程学习-高级.docx" beforeDir="false" afterPath="$PROJECT_DIR$/note/2.尚硅谷redis课程学习-高级.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,8 +124,16 @@
       <workItem from="1686242250567" duration="7355000" />
       <workItem from="1688277232181" duration="1095000" />
       <workItem from="1688278427087" duration="1763000" />
-      <workItem from="1688280980090" duration="12199000" />
+      <workItem from="1688280980090" duration="14481000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(20230709):分布式锁">
+      <created>1688872801006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688872801006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +150,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(20230709):分布式锁" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(20230709):分布式锁" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
